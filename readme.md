@@ -32,3 +32,5 @@ create unique index ix_auth_username on authorities (username,authority);
 	-db서 비번가져오는건 잠시 주석처리
 --어차피 각자 DB라서 테스트는 그냥 해도 상관없습니다.
 --일단 어떤기능 할지 이것저것 테스트해보고, 필요한 column값 합의해서 AWS에 최종적으로 DB올리면 되니 상관을 없을듯합니다.
+
+--tj1
