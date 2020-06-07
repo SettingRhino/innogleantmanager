@@ -1,0 +1,14 @@
+package com.han.innogle.model;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+public class User {
+	private int usernumber;
+	private String username;
+	private String userpassword;
+}

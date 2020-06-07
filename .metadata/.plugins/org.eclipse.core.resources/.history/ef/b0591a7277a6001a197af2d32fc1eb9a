@@ -1,0 +1,9 @@
+package com.han.innogle.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao userDao;
+}

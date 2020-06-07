@@ -1,0 +1,24 @@
+package com.han.innogle.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name="userslist")
+public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="usernumber", nullable=false,updatable=false)
+	private int usernumber;
+	@Column(name="username", nullable=false)
+	private String username;
+	@Column(name="userpassword", nullable=false)
+	private String userpassword;
+}

@@ -1,0 +1,13 @@
+package com.han.innogle.model;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
+public class Testtable {
+	private int testno;
+	private int testname;
+}

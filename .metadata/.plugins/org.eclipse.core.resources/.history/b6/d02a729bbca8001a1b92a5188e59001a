@@ -1,0 +1,80 @@
+package com.han.innogle.controller;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.han.innogle.model.User;
+import com.han.innogle.service.UserService;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+	@Autowired
+	private UserService userService;
+	@Autowired
+	BCryptPasswordEncoder pwdEncoder;
+	
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		User user=userService.getUserByName("tj");
+		System.out.println(user.toString());
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "home";
+	}
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public String getlogin() {
+		System.out.println("getlogin");
+		return "login";
+	}
+	//loginSuccess
+	@RequestMapping(value = "login", method = RequestMethod.POST)
+	public String login(User user) {
+		System.out.println("POST받음");
+		//아이디가 있는지 체크
+		int result = userService.idchk(user);
+		System.out.println("result"+result);
+		try {
+			if(result==1) {//아이디 존재함
+				String inputPass = user.getPassword();
+				String pwd = pwdEncoder.encode(inputPass);
+		
+				//웹페이지의 pwd랑 DB의 비교
+				User userdb=userService.getUserByName(user.getUsername());
+				String pwddb=userdb.getPassword().replace("{noop}","");
+				System.out.println(pwd);
+				System.out.println(pwddb);
+				if(pwddb.equals(pwd))
+					return "loginSuccess";
+				else
+					return "loginFail";
+			}
+			else if(result == 0) {
+				return "loginFail";
+			}
+			
+		}catch(Exception e) {
+			throw new RuntimeException();
+		}
+		return "loginFail";
+	}
+	
+}

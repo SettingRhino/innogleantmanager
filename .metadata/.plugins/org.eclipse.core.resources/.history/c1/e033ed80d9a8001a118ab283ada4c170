@@ -1,0 +1,9 @@
+package com.han.innogle.security;
+
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+
+public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler  implements ExceptionProcessor
+
+출처: https://coding-start.tistory.com/153 [코딩스타트]{
+
+}

@@ -1,0 +1,34 @@
+package com.han.innogle.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao userDao;
+	public Product getProductById(int id) {
+		// TODO Auto-generated method stub
+		return productDao.getProductById(id);
+	} 
+	
+	public List<Product> getProducts() {
+		// TODO Auto-generated method stub
+		return productDao.getProducts();
+	}
+
+	public void addProduct(Product product) {
+		productDao.addProduct(product);
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteProduct(Product product) {
+		// TODO Auto-generated method stub
+		productDao.deleteProduct(product);
+	}
+
+	public void updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		 productDao.updateProduct(product);
+	}
+}

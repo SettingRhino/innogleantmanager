@@ -1,0 +1,7 @@
+package com.han.innogle.model;
+
+public class User {
+	private int usernumber;
+	private String username;
+	private String userpassword;
+}

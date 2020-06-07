@@ -1,0 +1,8 @@
+package com.han.innogle.security;
+
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@EnabledWebSecurity
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+
+}

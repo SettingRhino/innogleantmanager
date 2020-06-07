@@ -1,0 +1,13 @@
+package com.han.innogle.model;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class UserSignInfo {
+
+	private String username;
+
+	private String password;
+
+	private String password2;
+}

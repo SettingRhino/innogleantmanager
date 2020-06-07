@@ -1,0 +1,25 @@
+package com.han.innogle.model;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name="usersauthorities")
+public class Authorities {
+	@Id
+	@Column(name="authorities")
+	private String authority;
+	@Column(name="username")
+	private String username;
+}

@@ -1,0 +1,21 @@
+package com.han.innogle.model;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name="authorities")
+public class Authorities {
+	
+	private String authority;
+	
+	private String username;
+}

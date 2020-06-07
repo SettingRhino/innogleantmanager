@@ -1,0 +1,53 @@
+package com.han.innogle.security;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
+@EnableWebSecurity
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+	//
+	private AuthenticationProvider authenticationProvider;
+	public SpringSecurityConfig(AuthenticationProvider authenticationProvider) {
+		this.authenticationProvider = authenticationProvider;
+	}
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		// TODO Auto-generated method stub
+		auth.authenticationProvider(authenticationProvider);
+	}
+	//시크리티 룰 무시
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/resources/**");
+	}
+	//룰
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		// TODO Auto-generated method stub
+		http.authorizeRequests().antMatchers("/login*/**").permitAll().antMatchers("/logout/**").permitAll()
+		.anyRequest().authenticated()
+		.and().logout().logoutUrl("/logout").logoutSuccessHandler(logoutSuccessHandler())
+		.and().csrf().disable()
+		.addFilter(jwtAuthenticationFilter())
+		.addFilter(jwtAuthorizationFilter())
+		.exceptionHandling()
+		.accessDeniedHandler(accessDeniedHandler())
+		.authenticationEntryPoint(authenticationEntryPoint());
+	}
+	@Bean
+    public AuthenticationSuccessHandler authenticationSuccessHandler() {
+        CustomAuthenticationSuccessHandler successHandler = new CustomAuthenticationSuccessHandler();
+        successHandler.setDefaultTargetUrl("/index");
+        return successHandler;
+    }
+
+
+출처: https://coding-start.tistory.com/153 [코딩스타트]
+	
+}
