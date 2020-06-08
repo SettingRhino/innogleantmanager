@@ -93,7 +93,7 @@
           <li>설명3</li>
           <li>설명4</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary"href="<c:url value="/logout"/>">손님 등록</button>
+        <a href="<c:url value="/customers" />"><button type="button" class="btn btn-lg btn-block btn-primary" >손님 등록</button></a>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
