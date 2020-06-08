@@ -9,13 +9,9 @@
   <table class="table table-striped">
     <thead>
       <tr class="bg-success">
-      	<th>Photo Thumb</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Manufacturer</th>
-        <th>UnitInStock</th>
-        <th>Description</th>
+      	<th>손님 이름</th>
+        <th>손님 특징</th>
+        <th>기타사항</th>
         <th></th>
       </tr>
     </thead>
@@ -26,15 +22,13 @@
       		<td> ${customer.customer_character} </td>
       		<td> ${customer.customer_etc} </td>
       		<td>
-      			<a href="<c:url value="/admin/productInventory/deleteProduct/${product.id}"/>">
-      				<i class="fas fa-times-circle"></i></a>
-      			<a href="<c:url value="/admin/productInventory/updateProduct/${product.id}"/>">
-      				<i class="fas fa-edit"></i></a>
+      			<a href="<c:url value="/customers/deleteCustomer/${customer.id}"/>"><button>삭제</button></a>
+      			<a href="<c:url value="/customers/updateCustomer/${customer.id}"/>"><button>수정</button></a>
       		</td>
       	</tr>
       </c:forEach>
     </tbody>
   </table>
-  <a href="<c:url value="/admin/productInventory/addProduct"/>" class="btn btn-primary"> Add Product </a> 
+  <a href="<c:url value="/customers/addCustomer"/>" class="btn btn-primary"> Add Product </a> 
 </div>
 </div>

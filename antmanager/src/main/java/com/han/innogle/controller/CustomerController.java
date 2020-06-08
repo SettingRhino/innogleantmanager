@@ -35,7 +35,7 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/customers/addCustomer", method = RequestMethod.GET)
-	public String addProduct(Model model) {
+	public String addCustomer(Model model) {
 
 		Customer customers = new Customer();
 
@@ -44,9 +44,8 @@ public class CustomerController {
 		return "addCustomer";
 	}
 
-	// web form data -> object(filled with form data)
-	@RequestMapping(value = "customers/addCustomer", method = RequestMethod.POST)
-	public String addProductPost(@Valid Customer customer, BindingResult result, HttpServletRequest request) {
+	@RequestMapping(value = "/customers/addCustomerAfter", method = RequestMethod.GET)
+	public String addCustomerPost(@Valid Customer customer, BindingResult result, HttpServletRequest request) {
 
 		if(result.hasErrors()) {
 			System.out.println("===Web From data has some errors===");
@@ -64,7 +63,7 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/customers/deleteCustomer/{id}", method = RequestMethod.GET)
-	public String deleteProduct(@PathVariable int id, HttpServletRequest request) {
+	public String deleteCustomer(@PathVariable int id, HttpServletRequest request) {
 
 		Customer customer = customerService.getCustomerById(id);
 
@@ -76,19 +75,18 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/customers/updateCustomer/{id}", method = RequestMethod.GET)
-	public String updateProduct(@PathVariable int id, Model model) {
+	public String updateCustomer(@PathVariable int id, Model model) {
 
-		// db�씫�뼱���꽌
 		Customer customer = customerService.getCustomerById(id);
-		// 紐⑤뜽�뿉 �꽔怨�
+
 		model.addAttribute("customer", customer);
-		// jsp�뿉�꽌 洹몃젮以섏꽌 湲곗〈 �궡�슜�씠 �뤌�뿉 �뱾�뼱媛��엳�쓬
+
 		return "updateCustomer";
 
 	}
 
-	@RequestMapping(value = "/customers/updateCustomer", method = RequestMethod.POST)
-	public String updateProductPost(@Valid Customer customer, BindingResult result, HttpServletRequest request) {
+	@RequestMapping(value = "/customers/updateCustomerAfter", method = RequestMethod.GET)
+	public String updateCustomerPost(@Valid Customer customer, BindingResult result, HttpServletRequest request) {
 
 		
 		if(result.hasErrors()) {
