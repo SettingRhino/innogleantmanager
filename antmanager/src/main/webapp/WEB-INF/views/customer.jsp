@@ -18,9 +18,9 @@
     <tbody>
       <c:forEach var="customer" items="${customers}">
       	<tr>
-      		<td> ${customer.customerName} </td>
-      		<td> ${customer.customerCharacter} </td>
-      		<td> ${customer.customerEtc} </td>
+      		<td> ${customer.customer_name} </td>
+      		<td> ${customer.customer_character} </td>
+      		<td> ${customer.customer_etc} </td>
       		<td> <a href="<c:url value="/viewCustomer/${customer.id}" />"><i class="fas fa-info-circle"></i></a></td>
       	</tr>
       </c:forEach>
