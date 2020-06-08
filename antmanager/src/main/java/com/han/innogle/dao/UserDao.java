@@ -50,7 +50,7 @@ public class UserDao {
 		Query<User> query=session.createQuery(hql,User.class);
 		query.setParameter("username", username);
 		List<User> users=query.getResultList();
-		System.out.println("ì¡´ì¬ì—¬ë¶€"+users.size());
+		System.out.println("Á¸Àç¿©ºÎ"+users.size());
 		if(users.size()==0) {
 			return 0;
 		}else {
@@ -61,8 +61,8 @@ public class UserDao {
 	}
 
 	public void signup(User user) {
-		//ë“±ë¡í•˜ì.
-		//{noop}ë¶™ì´ê¸°
+		//µî·ÏÇÏÀÚ.
+		//{noop}ºÙÀÌ±â
 		String pwd ="{noop}"+ user.getPassword();
 		user.setPassword(pwd);
 		System.out.println(pwd);

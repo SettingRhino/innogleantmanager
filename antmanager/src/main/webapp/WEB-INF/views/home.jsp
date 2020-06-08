@@ -17,7 +17,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
 
     <!-- Bootstrap core CSS -->
-<link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Favicons
 <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
@@ -93,7 +93,7 @@
           <li>설명3</li>
           <li>설명4</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary"href="#">등록하기2</button>
+        <button type="button" class="btn btn-lg btn-block btn-primary"href="<c:url value="/logout"/>">손님 등록</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">

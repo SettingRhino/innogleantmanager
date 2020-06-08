@@ -20,7 +20,7 @@ import com.han.innogle.service.UserService;
 @Controller
 @RequestMapping("/user/*")
 public class UserController {
-	//íšŒì› ë“±ë¡, ìˆ˜ì •, íƒˆí‡´ë“±...
+	//È¸¿ø µî·Ï, ¼öÁ¤, Å»Åğµî...
 	
 	@Autowired
 	UserService userService;
@@ -30,19 +30,19 @@ public class UserController {
 			@RequestParam(value="passchck",required=false)String passchck,
 			@RequestParam(value="validId", required=false)String validId, Model model) throws Exception{
 		if(existId!=null) {
-			System.out.println("ê°™ì€ ì•„ì´ë”” ìˆë°");
-			model.addAttribute("existId", existId+"ì™€ ê°™ì€ ì‚¬ìš©ìê°€ ìˆìŠµë‹ˆë‹¤.");
+			System.out.println("°°Àº ¾ÆÀÌµğ ÀÖµ¥");
+			model.addAttribute("existId", existId+"¿Í °°Àº »ç¿ëÀÚ°¡ ÀÖ½À´Ï´Ù.");
 		}else {
-			System.out.println("ê°™ì€ ì•„ì´ë”” ì—†ë°");
+			System.out.println("°°Àº ¾ÆÀÌµğ ¾øµ¥");
 			if(passchck!=null) {
-				System.out.println("ë¹„ë²ˆ í†µì¼ì‹œì¼œì•¼í•¨");
+				System.out.println("ºñ¹ø ÅëÀÏ½ÃÄÑ¾ßÇÔ");
 				if(validId!=null) 
 				{				
 					model.addAttribute("validId",validId);
 				}
-					model.addAttribute("passchck", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í†µì¼í•˜ì„¸ìš”.");
+					model.addAttribute("passchck", "ºñ¹Ğ¹øÈ£¸¦ ÅëÀÏÇÏ¼¼¿ä.");
 			}else {
-				System.out.println("ë¹„ë²ˆ í†µì¼í–ˆìŒ");
+				System.out.println("ºñ¹ø ÅëÀÏÇßÀ½");
 			}
 		}
 		
@@ -51,17 +51,17 @@ public class UserController {
 	
 	@RequestMapping(value="signup", method=RequestMethod.POST)
 	public String postRssiter(UserSignInfo userSignInfo) throws Exception{
-		System.out.println("POSTë°›ìŒ");
-		//ì•„ì´ë””ê°€ ìˆëŠ”ì§€ ì²´í¬
+		System.out.println("POST¹ŞÀ½");
+		//¾ÆÀÌµğ°¡ ÀÖ´ÂÁö Ã¼Å©
 		int result = userService.idchk(userSignInfo.getUsername());
 		System.out.println("result"+result);
 		try {
-			if(result==1) {//ì•„ì´ë”” ì¡´ì¬í•¨
-				//ë‚˜ì¤‘ì— ìˆë‹¤ëŠ”ê±¸ í‘œì‹œ
+			if(result==1) {//¾ÆÀÌµğ Á¸ÀçÇÔ
+				//³ªÁß¿¡ ÀÖ´Ù´Â°É Ç¥½Ã
 				return "redirect:/user/signup?existId="+userSignInfo.getUsername();
 			}
 			else if(result ==0) {
-				//ì•„ì´ë””ì¤‘ë³µì€ í†µê³¼
+				//¾ÆÀÌµğÁßº¹Àº Åë°ú
 				String inputPass = userSignInfo.getPassword();
 				String inputPass2 = userSignInfo.getPassword2();
 				if(inputPass.equals(inputPass2)) {
@@ -69,7 +69,7 @@ public class UserController {
 					user.setUsername(userSignInfo.getUsername());
 					user.setPassword(inputPass);
 					user.setEnabled(true);
-					System.out.println("pwd ì„¤ì •");
+					System.out.println("pwd ¼³Á¤");
 					userService.signup(user);
 					return "redirect:/";
 				}
