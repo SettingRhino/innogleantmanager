@@ -62,7 +62,7 @@
       	<th>손님 이름</th>
         <th>손님 특징</th>
         <th>기타사항</th>
-        <th></th>
+        <th ></th>
       </tr>
     </thead>
     <tbody>
@@ -71,15 +71,15 @@
       		<td> ${customer.customer_name} </td>
       		<td> ${customer.customer_character} </td>
       		<td> ${customer.customer_etc} </td>
-      		<td>
-      			<a href="<c:url value="/customers/deleteCustomer/${customer.id}"/>"><button>삭제</button></a>
-      			<a href="<c:url value="/customers/updateCustomer/${customer.id}"/>"><button>수정</button></a>
+      		<td align="center">
+      			<a href="<c:url value="/customers/deleteCustomer/${customer.id}"/>"  class="btn btn-danger">삭제</a>
+      			<a href="<c:url value="/customers/updateCustomer/${customer.id}"/>"  class="btn btn-warning btn-large">수정</a>
       		</td>
       	</tr>
       </c:forEach>
     </tbody>
   </table>
-	<a href="<c:url value="/customers/addCustomer"/>" class="btn btn-primary"> Add Product </a> 
+	<a href="<c:url value="/customers/addCustomer"/>" class="btn btn-primary"> Add Customer </a> 
 	</div>
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
 </footer>
