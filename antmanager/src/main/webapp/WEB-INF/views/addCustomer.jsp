@@ -79,9 +79,9 @@
 				<sf:textarea path="customer_etc" id="customer_etc" class="form-control" />
 			</div>
 			
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">추가</button>
 			
-			<a href="<c:url value="/customers" />" class="btn btn-dark">Cancel</a>
+			<a href="<c:url value="/customers" />" class="btn btn-dark">취소</a>
 		</sf:form>
 		<br/>
 	</div>

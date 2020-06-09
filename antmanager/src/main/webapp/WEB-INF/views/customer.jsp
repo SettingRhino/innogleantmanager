@@ -74,6 +74,7 @@
       		<td align="center">
       			<a href="<c:url value="/customers/deleteCustomer/${customer.id}"/>"  class="btn btn-danger">삭제</a>
       			<a href="<c:url value="/customers/updateCustomer/${customer.id}"/>"  class="btn btn-warning btn-large">수정</a>
+      			<a href="<c:url value="/viewCustomer/${customer.id}"/>"  class="btn btn-dark">상세보기</a>
       		</td>
       	</tr>
       </c:forEach>
