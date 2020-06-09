@@ -68,8 +68,6 @@ public class CustomerController {
 		Customer customer = customerService.getCustomerById(id);
 
 		customerService.deleteCustomer(customer);
-//		if (!productService.deleteProduct(id)) 
-//			System.out.println("Deleting Product cannot be done");
 
 		return "redirect:/customers";
 	}
