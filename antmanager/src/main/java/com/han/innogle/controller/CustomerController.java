@@ -101,15 +101,15 @@ public class CustomerController {
 
 		return "redirect:/customers";
 	}
-	/*
-	@RequestMapping("/viewProduct/{productId}")
-	public String viewProduct(@PathVariable int productId, Model model) {
+	
+	@RequestMapping("/viewCustomer/{productId}")
+	public String viewProduct(@PathVariable int customerId, Model model) {
 		
-		Product product = productService.getProductById(productId);
+		Customer customer = customerService.getCustomerById(customerId);
 		
-		model.addAttribute("product", product);
+		model.addAttribute("customer", customer);
 		
-		return "viewProduct";
+		return "viewCustomer";
 	}
-	*/
+	
 }

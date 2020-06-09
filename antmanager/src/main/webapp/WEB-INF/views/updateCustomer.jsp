@@ -63,7 +63,6 @@
 			<div class="form-group">
 				<label for="customer_name">손님 성명 : </label>
 				<sf:input path="customer_name" id="customer_name" class="form-control" />
-				<sf:errors path="customer_name" cssStyle="color:#ff0000;"/>
 			</div>
 			
 			<div class="form-group">

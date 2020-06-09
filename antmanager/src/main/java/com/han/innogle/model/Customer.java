@@ -26,7 +26,6 @@ public class Customer {
 	@Column(name = "customer_id", nullable = false, updatable = false)
 	private int id;
 	
-	@NotEmpty(message="The customer name must not be null")
 	private String customer_name;
 
 	private String customer_character;
