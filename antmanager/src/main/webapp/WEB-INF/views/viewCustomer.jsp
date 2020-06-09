@@ -50,24 +50,27 @@
   <a class="btn btn-outline-primary" href="<c:url value="/logout"/>">로그아웃</a>
 </div>
 
-
 <div class="container-wrapper">
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h2>단골 손님 상세 페이지</h2>
-			<p>단골손님 내용을 상세히 볼 수 있어요!</p>
-		</div>
+	<div class="container">
+		<h1 style="color: gray;">단골 손님 상세보기</h1>
 
-		<div class="col-md-6">
-			<h3>${customer.customer_name}</h3>
-			<hr>
-			<p>${customer.customer_character}</p>
-			<p><strong> 기타 사항: </strong><br/> ${customer.customer_etc}</p>
-		</div>
-	</div>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  	<hr>
+  	<p><h2>${customer.customer_name}</h2></p>
+  	<hr>
+  	<h4 style="color: gray;"> 특징 </h4><br/> 
+  	<p style="font-size: 18pt">${customer.customer_character}</p>
+  	<hr>
+	<h4 style="color: gray;"> 기타사항 </h4><br/>
+	<p style="font-size: 18pt">${customer.customer_etc}</p>
+	<hr>
 </div>
-<a href="<c:url value="/customers" />" class="btn btn-dark">취소</a>
+
+<div class="container" align="right">
+	<a href="<c:url value="/customers" />" class="btn btn-dark">취소</a>
+</div>
+	</div>
 </div>
 
 
