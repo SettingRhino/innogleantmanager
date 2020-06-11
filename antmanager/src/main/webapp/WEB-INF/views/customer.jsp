@@ -58,11 +58,11 @@
 <div class="container">
 <table class="table table-striped">
     <thead>
-      <tr class="bg-success">
-      	<th>손님 이름</th>
-        <th>손님 특징</th>
-        <th>기타사항</th>
-        <th ></th>
+      <tr bgcolor="LightSkyBlue">
+      	<th width="15%">손님 이름</th>
+        <th width="25%">손님 특징</th>
+        <th width="30%">기타사항</th>
+        <th width="30%"></th>
       </tr>
     </thead>
     <tbody>

@@ -65,10 +65,15 @@
 	<h4 style="color: gray;"> 기타사항 </h4><br/>
 	<p style="font-size: 18pt">${customer.customer_etc}</p>
 	<hr>
+	<p>
+		<a href="<c:url value="/customers/deleteCustomer?id=${customer.id}"/>"  class="btn btn-danger">삭제</a>
+		<a href="<c:url value="/customers/updateCustomer?user=${customer.user}&id=${customer.id}"/>"  class="btn btn-warning btn-large">수정</a>
+    </p>
+    <hr>	
 </div>
 
 <div class="container" align="right">
-	<a href="<c:url value="/customers" />" class="btn btn-dark">취소</a>
+	<a href="<c:url value="/customers" />" class="btn btn-dark">목록으로</a>
 </div>
 	</div>
 </div>
