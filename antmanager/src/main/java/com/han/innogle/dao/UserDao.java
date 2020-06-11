@@ -38,37 +38,31 @@ public class UserDao {
 		// TODO Auto-generated method stub
 		
 	}
-
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(user);
+		session.flush();
 	}
 
-	public int idchk(String username) {
+//바꾸기
+	public 	List<User> idchk(String username) {
 		Session session = sessionFactory.getCurrentSession();
 		String hql="from User where username=:username";
 		Query<User> query=session.createQuery(hql,User.class);
 		query.setParameter("username", username);
 		List<User> users=query.getResultList();
 		System.out.println("존재여부"+users.size());
-		if(users.size()==0) {
-			return 0;
-		}else {
-			return 1;
-		}
+		return users;
+		
 		// TODO Auto-generated method stub
 
 	}
 
-	public void signup(User user) {
+	public void signup(User user,Authorities userauth) {
 		//등록하자.
 		//{noop}붙이기
-		String pwd ="{noop}"+ user.getPassword();
-		user.setPassword(pwd);
-		System.out.println(pwd);
-		Authorities userauth=new Authorities();
-		userauth.setUsername(user.getUsername());
-		userauth.setAuthority("ROLE_USER");
+		//System.out.println(pwd);
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(user);
 		session.saveOrUpdate(userauth);
@@ -76,4 +70,6 @@ public class UserDao {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 }

@@ -31,7 +31,7 @@ public class CustomerController {
 		model.addAttribute("customers",customers);
 		
 		
-		return "customer";  //view�쓽 logical name
+		return "customer"; 
 	}
 
 	@RequestMapping(value = "/customers/addCustomer", method = RequestMethod.GET)

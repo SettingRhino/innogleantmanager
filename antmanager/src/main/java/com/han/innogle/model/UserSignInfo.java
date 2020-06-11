@@ -1,5 +1,7 @@
 package com.han.innogle.model;
 
+import javax.persistence.Column;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,4 +15,8 @@ public class UserSignInfo {
 	private String password;
 	
 	private String password2;
+	
+	private String userconfirmquestion;
+	
+	private String userconfirmanswer;
 }

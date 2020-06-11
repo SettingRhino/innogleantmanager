@@ -1,5 +1,3 @@
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -16,13 +14,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
 
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Favicons
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
- -->
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <style>
       .bd-placeholder-img {
@@ -33,7 +25,7 @@
         -ms-user-select: none;
         user-select: none;
       }
-
+      
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -45,21 +37,21 @@
     <link href= "<c:url value="/resources/css/pricing.css"/>" rel="stylesheet">
   </head>
   <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h5 class="my-0 mr-md-auto font-weight-normal">회사이름???</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">삭제할지...</a>
-    <a class="p-2 text-dark" href="#">삭제할지..</a>
-    <a class="p-2 text-dark" href="#">삭제할지.</a>
-    
-    <a class="p-2 text-dark" href="<c:url value="/test"/>">삭제할지</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="<c:url value="/user/signup"/>">회원가입</a>
-  <a class="btn btn-outline-primary" href="<c:url value="/login"/>">로그인</a>
-  <a class="btn btn-outline-primary" href="<c:url value="/logout"/>">로그아웃</a>
-</div>
+	<div
+		class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+		<h5 class="my-0 mr-md-auto font-weight-normal">
+			</a>
+			</p>
+		</h5>
+		<nav class="my-2 my-md-0 mr-md-3"></nav>
 
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<a class="btn btn-outline-primary"href="<c:url value="/user/signup"/>">회원가입</a>
+		<a class="btn btn-outline-primary" href="<c:url value="/login"/>">로그인</a>
+		<a class="btn btn-outline-primary" href="<c:url value="/logout"/>">로그아웃</a>
+	</div>
+	
+	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">설명 큰글씨</h1>
   <p class="lead">여기는 간략한 설명 정도 어떨까 합니다.</p>
 </div>
@@ -78,7 +70,7 @@
           <li>설명3</li>
           <li>설명4</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary"href="#">등록하기</button>
+        <a class="btn btn-lg btn-block btn-primary" href="<c:url value="/diary/view"/>"> 등록하기</a>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
