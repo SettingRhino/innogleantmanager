@@ -52,19 +52,12 @@ public class CustomerController {
 			
 			return "addCustomer";
 		}
-		
-		/*
-		Customer customers = new Customer();
 
-		model.addAttribute("customers", customers);
-
-		return "addCustomer";
-		*/
 	}
 
 	@RequestMapping(value = "/customers/addCustomerAfter", method = RequestMethod.POST)
 	public String addCustomerPost(@Valid Customer customer, BindingResult result, Authentication auth) {
-
+		
 		if(!auth.isAuthenticated()) {
 			return "redirect:/login";
 		}
@@ -78,7 +71,7 @@ public class CustomerController {
 				return "addCustomer";
 			}
 
-			customerService.updateCustomer(customer, auth);
+			customerService.addCustomer(customer, auth);
 
 			return "redirect:/customers";
 		}

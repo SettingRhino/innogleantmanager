@@ -22,7 +22,8 @@ public class CustomerService {
 		return customerDao.getCustomers(name);
 	}
 	
-	public void addCustomer(Customer customer) {
+	public void addCustomer(Customer customer, Authentication auth) {
+		customer.setUser(auth.getName());
 		customerDao.addCustomer(customer);
 	}
 

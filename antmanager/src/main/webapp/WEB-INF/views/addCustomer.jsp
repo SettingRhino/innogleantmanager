@@ -57,12 +57,14 @@
 -->
 <div class="container-wrapper">
 	<div class="container">
-		<h1>단골 손님 추가</h1>
-		<p class="lead"> 단골 손님 정보를 추가하세요 : </p>
+		<h1>단골 손님 수정</h1>
+		<p class="lead"> 단골 손님 정보를 수정하세요 : </p>
 		
-		<sf:form action="${pageContext.request.contextPath}/customers/addCustomerAfter"
+		<sf:form action="${pageContext.request.contextPath}/customers/updateCustomerAfter"
 			method="post" modelAttribute="customers">
 		
+		
+		<sf:hidden path="id"/>
 			<div class="form-group">
 				<label for="customer_name">손님 성명 : </label>
 				<sf:input path="customer_name" id="customer_name" class="form-control" />
@@ -79,9 +81,9 @@
 				<sf:textarea path="customer_etc" id="customer_etc" class="form-control" />
 			</div>
 			
-			<button type="submit" class="btn btn-primary">추가</button>
+			<button type="submit" class="btn btn-primary">Submit</button>
 			
-			<a href="<c:url value="/customers" />" class="btn btn-dark">취소</a>
+			<a href="<c:url value="/customers" />" class="btn btn-dark">Cancel</a>
 		</sf:form>
 		<br/>
 	</div>
