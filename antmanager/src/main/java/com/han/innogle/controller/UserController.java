@@ -1,18 +1,14 @@
 package com.han.innogle.controller;
 
-import java.util.List;
-
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.han.innogle.model.Diary;
 import com.han.innogle.model.User;
 import com.han.innogle.model.UserSignInfo;
 import com.han.innogle.service.UserService;
@@ -24,6 +20,59 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	
+	@RequestMapping(value="forgetpassword", method=RequestMethod.GET)
+	public String getforgetpassword(@RequestParam(value="existId",required=false)String existId,
+			@RequestParam(value="username",required=false)String username, Model model) throws Exception{
+		//비번찾기
+		if(existId==null&&username==null) {//처음
+			model.addAttribute("start","start");
+			return "forgetpassword";
+		}
+		
+		//아이디존재 확인&& 질문 설정
+		if(username!=null) {//이름 넘어옴->유저조회->있다 없다.
+			System.out.println(username);
+			int result = userService.idchk(username);
+			if(result==0){//유저없다
+				String notExistId="아이디가 존재하지 않습니다.";
+				model.addAttribute("username",username);
+				model.addAttribute("notExistId", notExistId);
+				model.addAttribute("start","start");//다시 처음으로
+			}else {//유저있다.
+				boolean confirmchk=userService.userconfirmchk(username);
+				if(confirmchk) {//답도 했다 //모델에 이름, 비밀번호 답.
+					User user=userService.getUserByName(username);
+					model.addAttribute("username",user.getUsername());
+					model.addAttribute("userconfirmquestion",user.getUserconfirmquestion());
+				}
+				else {
+					String notconfirmchk="비밀번호 힌트를 지정하지 않아 불가합니다.";
+					model.addAttribute("notconfirmchk",notconfirmchk);
+				}
+			}
+		}
+		//힌트확인 비번변경->post
+		return "forgetpassword";
+	}
+	@RequestMapping(value="forgetpassword", method=RequestMethod.POST)
+	public String postforgetpassword(UserSignInfo userSignInfo, Model model) throws Exception{
+		System.out.println("forgetpassword POST ---- "+userSignInfo.toString());
+		boolean answerchk= userService.answerchk(userSignInfo.getUsername(),userSignInfo.getUserconfirmanswer());
+		System.out.println("---------forgetpassword POST answerchk"+Boolean.toString(answerchk)+"---------");
+		if(answerchk) {//답이 같다.
+			if(userService.updateUserpw(userSignInfo)) {
+				model.addAttribute("pwupdateok", "비밀번호변경완료");
+				return "/login";
+			}else {
+				model.addAttribute("passchck","비밀번호가 일치하지 않습니다.");
+				return "/user/forgetpassword?username="+userSignInfo.getUsername();
+			}
+		}
+			//답이 다르다
+		model.addAttribute("answerchck","비밀번호힌트가 일치하지 않습니다.");
+		return "/user/forgetpassword?username="+userSignInfo.getUsername();
+	}
 	
 	@RequestMapping(value="signup", method=RequestMethod.GET)
 	public String getRssiter(@RequestParam(value="existId",required=false)String existId,
@@ -62,15 +111,7 @@ public class UserController {
 			}
 			else if(result ==0) {
 				//아이디중복은 통과
-				String inputPass = userSignInfo.getPassword();
-				String inputPass2 = userSignInfo.getPassword2();
-				if(inputPass.equals(inputPass2)) {
-					User user=new User();
-					user.setUsername(userSignInfo.getUsername());
-					user.setPassword(inputPass);
-					user.setEnabled(true);
-					System.out.println("pwd 설정");
-					userService.signup(user);
+				if(userService.signup(userSignInfo)) {
 					return "redirect:/";
 				}
 				else {

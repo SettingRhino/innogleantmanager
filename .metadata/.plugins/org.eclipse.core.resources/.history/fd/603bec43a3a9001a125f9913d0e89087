@@ -1,0 +1,21 @@
+package com.han.innogle.service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.han.innogle.dao.DiaryDao;
+import com.han.innogle.model.Diary;
+
+@Service
+public class DiaryService {
+	@Autowired
+	DiaryDao diaryDao;
+	public List<Diary> getdiarylist(String name) {
+		// TODO Auto-generated method stub
+		
+		return diaryDao.getdiarylist(name);
+	}
+
+}

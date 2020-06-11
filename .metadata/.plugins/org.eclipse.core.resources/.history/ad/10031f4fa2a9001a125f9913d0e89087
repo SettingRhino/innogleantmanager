@@ -1,0 +1,14 @@
+package com.han.innogle.dao;
+
+import java.util.ArrayList;
+
+import com.han.innogle.model.Diary;
+
+public class DiaryDao {
+
+	public ArrayList<Diary> getdiarylist(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -105,3 +105,69 @@
 6월 08, 2020 04:08:42.73 [10428:23272:0608/040842.737:ERROR:shader_disk_cache.cc(606)] Shader Cache Creation failed: -2
 6월 08, 2020 04:08:43.04 기존 브라우저 세션에서 여는 중입니다.
 6월 08, 2020 04:10:02.31 [0608/041002.318:ERROR:crash_report_database_win.cc(469)] failed to stat report
+
+6월 08, 2020 23:30:59.94 NEW SESSION
+6월 08, 2020 23:30:59.94 [0608/233059.889:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 24:21:53.53 [0609/002153.533:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 01:19:35.68 [0609/011935.684:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 01:20:45.45 [0609/012045.450:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 01:23:15.03 [0609/012315.034:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 01:24:12.91 [0609/012412.910:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 01:27:59.36 [0609/012759.368:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 01:38:50.73 [0609/013850.735:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 02:00:04.71 [0609/020004.719:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 02:05:22.13 [0609/020522.131:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 02:09:25.97 [0609/020925.972:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:02:42.49 [0609/030242.498:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:35:35.83 [0609/033535.834:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:37:42.00 [0609/033742.007:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:44:05.12 [0609/034405.126:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:44:34.95 [0609/034434.952:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:54:34.95 [0609/035434.955:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:54:34.95 [0609/035434.955:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 03:59:34.95 [0609/035934.953:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:00:38.08 [0609/040038.080:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:06:24.51 [0609/040624.517:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:14:20.31 [0609/041420.311:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:14:34.95 [0609/041434.954:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:19:44.70 [0609/041944.703:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:21:39.84 [0609/042139.840:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:29:34.95 [0609/042934.954:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:38:09.35 [0609/043809.350:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:39:22.02 [0609/043922.028:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:44:34.95 [0609/044434.955:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:50:39.90 [0609/045039.903:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:55:32.86 [0609/045532.869:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 04:59:34.95 [0609/045934.956:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 05:14:34.95 [0609/051434.956:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 05:29:34.95 [0609/052934.958:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 05:44:34.95 [0609/054434.958:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 05:59:34.95 [0609/055934.959:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 06:14:34.95 [0609/061434.959:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 06:16:13.10 [0609/061613.108:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 06:19:10.10 [0609/061910.100:ERROR:crash_report_database_win.cc(469)] failed to stat report
+
+6월 09, 2020 07:55:23.70 NEW SESSION
+6월 09, 2020 07:55:23.70 [0609/075523.627:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 07:57:06.29 [0609/075706.293:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 07:58:04.77 [0609/075804.776:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 08:05:18.03 [0609/080518.031:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 09:10:27.98 [0609/091027.985:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 09:16:52.05 [0609/091652.058:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 09:18:26.24 [0609/091826.245:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 09:20:08.88 [0609/092008.884:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 09:21:37.70 [0609/092137.700:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 09:23:03.15 [0609/092303.157:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:13:33.63 [0609/101333.638:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:17:33.24 [0609/101733.243:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:21:30.61 [0609/102130.614:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:24:46.14 [0609/102446.147:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:27:07.68 [0609/102707.683:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:32:18.88 [0609/103218.881:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 10:40:17.28 [0609/104017.282:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 11:11:26.03 [0609/111126.039:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 09, 2020 11:18:11.69 [0609/111811.690:ERROR:crash_report_database_win.cc(469)] failed to stat report
+
+6월 11, 2020 09:31:28.99 NEW SESSION
+6월 11, 2020 09:31:28.99 [0611/093128.889:ERROR:crash_report_database_win.cc(469)] failed to stat report
+6월 11, 2020 09:46:39.59 [0611/094639.594:ERROR:crash_report_database_win.cc(469)] failed to stat report

@@ -1,0 +1,55 @@
+package com.han.innogle.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.han.innogle.model.Diary;
+
+@Repository
+@Transactional
+public class DiaryDao {
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	public List<Diary> getDiarylist(String name) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from Diary where user=:username";
+		Query<Diary> query = session.createQuery(hql, Diary.class);
+		query.setParameter("username", name);
+		List<Diary> diarys = query.getResultList();
+		return diarys;
+	}
+
+	public Diary getDiary(int id) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+
+		Diary diary = (Diary) session.get(Diary.class, id);
+
+		return diary;
+	}
+
+	public void updateDiary(Diary diary) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(diary);
+		session.flush();
+	}
+
+	public void deleteDiary(int id) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+
+		session.delete("dairytable", id);
+	}
+
+}

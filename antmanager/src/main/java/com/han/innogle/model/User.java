@@ -24,4 +24,8 @@ public class User {
 	private String password;
 	@Column(name="enabled", nullable=false)
 	private boolean enabled;
+	@Column(name="userconfirmquestion")
+	private String userconfirmquestion;
+	@Column(name="userconfirmanswer")
+	private String userconfirmanswer;
 }
