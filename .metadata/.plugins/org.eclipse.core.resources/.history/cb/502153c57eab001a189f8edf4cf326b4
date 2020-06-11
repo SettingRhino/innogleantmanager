@@ -24,6 +24,12 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		
+		return "login";
+	}
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test(Authentication auth) {
 		System.out.println(auth.getName());

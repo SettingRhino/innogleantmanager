@@ -15,3 +15,8 @@
 0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:31:50 +0900] "GET /antmanager/resources/css/pricing.css HTTP/1.1" 200 248
 0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:31:52 +0900] "GET /antmanager/diary/view HTTP/1.1" 200 2850
 0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:31:52 +0900] "GET /antmanager/resources/css/pricing.css HTTP/1.1" 200 248
+127.0.0.1 - - [11/Jun/2020:09:46:39 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:46:39 +0900] "GET /antmanager/ HTTP/1.1" 200 5210
+0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:46:39 +0900] "GET /antmanager/resources/css/pricing.css HTTP/1.1" 200 248
+0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:46:42 +0900] "GET /antmanager/diary/view HTTP/1.1" 200 2850
+0:0:0:0:0:0:0:1 - - [11/Jun/2020:09:46:42 +0900] "GET /antmanager/resources/css/pricing.css HTTP/1.1" 200 248
