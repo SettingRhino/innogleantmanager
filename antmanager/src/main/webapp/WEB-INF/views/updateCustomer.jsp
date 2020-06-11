@@ -56,7 +56,7 @@
 		<p class="lead"> 단골 손님 정보를 수정하세요 : </p>
 		
 		<sf:form action="${pageContext.request.contextPath}/customers/updateCustomerAfter"
-			method="get" modelAttribute="customer" enctype="multipart/form-data">
+			method="post" modelAttribute="customer">
 		
 		
 		<sf:hidden path="id"/>

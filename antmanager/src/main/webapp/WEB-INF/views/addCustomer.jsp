@@ -61,7 +61,7 @@
 		<p class="lead"> 단골 손님 정보를 추가하세요 : </p>
 		
 		<sf:form action="${pageContext.request.contextPath}/customers/addCustomerAfter"
-			method="get" modelAttribute="customers" enctype="multipart/form-data">
+			method="post" modelAttribute="customers">
 		
 			<div class="form-group">
 				<label for="customer_name">손님 성명 : </label>

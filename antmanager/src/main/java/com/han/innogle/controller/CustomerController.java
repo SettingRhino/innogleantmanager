@@ -62,7 +62,7 @@ public class CustomerController {
 		*/
 	}
 
-	@RequestMapping(value = "/customers/addCustomerAfter", method = RequestMethod.GET)
+	@RequestMapping(value = "/customers/addCustomerAfter", method = RequestMethod.POST)
 	public String addCustomerPost(@Valid Customer customer, BindingResult result, Authentication auth) {
 
 		if(!auth.isAuthenticated()) {
@@ -113,7 +113,7 @@ public class CustomerController {
 
 	}
 
-	@RequestMapping(value = "/customers/updateCustomerAfter", method = RequestMethod.GET)
+	@RequestMapping(value = "/customers/updateCustomerAfter", method = RequestMethod.POST)
 	public String updateCustomerPost(@Valid Customer customer, BindingResult result, Authentication auth) {
 
 		if(!auth.isAuthenticated()) {
