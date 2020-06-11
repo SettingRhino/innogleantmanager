@@ -26,10 +26,13 @@ public class Customer {
 	@Column(name = "customer_id", nullable = false, updatable = false)
 	private int id;
 	
+	@NotEmpty(message="단솔 손님 이름은 반드시 적어주세요")
 	private String customer_name;
 
 	private String customer_character;
 	
 	private String customer_etc;
+	
+	private String user;
 	
 }

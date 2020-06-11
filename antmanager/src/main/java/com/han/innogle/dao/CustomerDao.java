@@ -17,13 +17,6 @@ public class CustomerDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	/*
-	 * private JdbcTemplate jdbcTemplate;
-	 * 
-	 * @Autowired public void setDataSource(DataSource dataSource) { jdbcTemplate =
-	 * new JdbcTemplate(dataSource); }
-	 */
-
 	public Customer getCustomerById(int id) {
 
 		Session session = sessionFactory.getCurrentSession();
@@ -31,61 +24,19 @@ public class CustomerDao {
 
 		return customer;
 
-		/*
-		 * String sqlStatement = "select * from product where id=?";
-		 * 
-		 * return jdbcTemplate.queryForObject(sqlStatement, new Object[] {id}, new
-		 * RowMapper<Product>() {
-		 * 
-		 * @Override public Product mapRow(ResultSet rs, int rowNum) throws SQLException
-		 * {
-		 * 
-		 * Product product = new Product();
-		 * 
-		 * product.setId(rs.getInt("id")); product.setName(rs.getString("name"));
-		 * product.setCategory(rs.getString("category"));
-		 * product.setPrice(rs.getInt("price"));
-		 * product.setManufacturer(rs.getString("manufacturer"));
-		 * product.setUnitInStock(rs.getInt("unitInStock"));
-		 * product.setDescription(rs.getString("description"));
-		 * 
-		 * return product; }
-		 * 
-		 * });
-		 */
 	}
 
-	public List<Customer> getCustomers() {
+	public List<Customer> getCustomers(String name) {
 
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "from Customer";
+		String hql = "from Customer where user=:username";
 
 		Query<Customer> query = session.createQuery(hql, Customer.class);
+		query.setParameter("username", name);
 		List<Customer> customerList = query.getResultList();
 
 		return customerList;
 
-		/*
-		 * String sqlStatement = "select * from product";
-		 * 
-		 * return jdbcTemplate.query(sqlStatement, new RowMapper<Product>() {
-		 * 
-		 * @Override public Product mapRow(ResultSet rs, int rowNum) throws SQLException
-		 * {
-		 * 
-		 * Product product = new Product();
-		 * 
-		 * product.setId(rs.getInt("id")); product.setName(rs.getString("name"));
-		 * product.setCategory(rs.getString("category"));
-		 * product.setPrice(rs.getInt("price"));
-		 * product.setManufacturer(rs.getString("manufacturer"));
-		 * product.setUnitInStock(rs.getInt("unitInStock"));
-		 * product.setDescription(rs.getString("description"));
-		 * 
-		 * return product; }
-		 * 
-		 * });
-		 */
 	}
 
 	public void addCustomer(Customer customer) {

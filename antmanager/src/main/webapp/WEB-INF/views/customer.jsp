@@ -72,9 +72,9 @@
       		<td> ${customer.customer_character} </td>
       		<td> ${customer.customer_etc} </td>
       		<td align="center">
-      			<a href="<c:url value="/customers/deleteCustomer/${customer.id}"/>"  class="btn btn-danger">삭제</a>
-      			<a href="<c:url value="/customers/updateCustomer/${customer.id}"/>"  class="btn btn-warning btn-large">수정</a>
-      			<a href="<c:url value="/viewCustomer/${customer.id}"/>"  class="btn btn-dark">상세보기</a>
+      			<a href="<c:url value="/customers/deleteCustomer?id=${customer.id}"/>"  class="btn btn-danger">삭제</a>
+      			<a href="<c:url value="/customers/updateCustomer?user=${customer.user}&id=${customer.id}"/>"  class="btn btn-warning btn-large">수정</a>
+      			<a href="<c:url value="/viewCustomer?user=${customer.user}&id=${customer.id}"/>"  class="btn btn-dark">상세보기</a>
       		</td>
       	</tr>
       </c:forEach>
