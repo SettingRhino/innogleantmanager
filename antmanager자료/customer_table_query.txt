@@ -1,8 +1,10 @@
 //customer 테이블 만드는 DDL
+
 CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_character` varchar(255) DEFAULT NULL,
   `customer_etc` varchar(255) DEFAULT NULL,
   `customer_name` varchar(255) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8
