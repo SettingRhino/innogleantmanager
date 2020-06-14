@@ -1,0 +1,17 @@
+package com.han.innogle.model;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class Diary {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+	@Column(name="id", nullable=false)
+	private int id;
+	private String title;
+	private String user;
+	private String contents;
+	private String discription;
+	private String date;
+}

@@ -1,0 +1,18 @@
+package com.han.innogle.dao;
+
+import java.util.ArrayList;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.han.innogle.model.Diary;
+
+public class DiaryDao {
+	@Autowired
+	private SessionFactory sessionFactory;
+	public ArrayList<Diary> getdiarylist(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

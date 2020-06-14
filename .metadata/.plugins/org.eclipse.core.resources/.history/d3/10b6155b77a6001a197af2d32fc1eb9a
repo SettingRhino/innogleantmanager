@@ -1,5 +1,0 @@
-package com.han.innogle.service;
-@Service
-public class UserService {
-
-}
