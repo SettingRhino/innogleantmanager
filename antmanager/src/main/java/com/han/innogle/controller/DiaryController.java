@@ -29,8 +29,8 @@ public class DiaryController {
 			return "redirect:/login";
 		}
 		else {
-			//ê¸€ëª©ë¡ ë³´ì—¬ì£¼ì.
-			//ì‚¬ìš©ì ì•„ì´ë””
+			//±Û¸ñ·Ï º¸¿©ÁÖÀÚ.
+			//»ç¿ëÀÚ ¾ÆÀÌµğ
 			//
 			List<Diary> diarys=diaryService.getDiarylist(auth.getName());
 			model.addAttribute("diarys",diarys);
@@ -77,14 +77,14 @@ public class DiaryController {
 		}
 		else {
 			if(auth.getName().equals(user)) {
-				//ê°™ë‹¤. ì‚¬ìš©ì ë§ìŒ
+				//°°´Ù. »ç¿ëÀÚ ¸ÂÀ½
 				Diary diary=diaryService.getDiary(Integer.parseInt(id));
 				System.out.println(diary.toString());
 				model.addAttribute("diary", diary);
 				return "viewItem";
 			}
 			else {
-				//ë‚´ë³´ë‚´ê¸° ì¼ë‹¨ í™ˆìœ¼ë¡œ
+				//³»º¸³»±â ÀÏ´Ü È¨À¸·Î
 				return "redirect:/";
 			}
 		}
@@ -93,7 +93,7 @@ public class DiaryController {
 	public String delete(@RequestParam(value="id")String id,Authentication auth) {
 		String name=auth.getName();
 		Diary dairy=diaryService.getDiary(Integer.parseInt(id));
-		if(dairy.getUser().equals(name)) {//í˜„ì¬ ì ‘ì†ìì™€ ê¸€ì£¼ì¸ì´ ê°™ë‹¤ë©´
+		if(dairy.getUser().equals(name)) {//ÇöÀç Á¢¼ÓÀÚ¿Í ±ÛÁÖÀÎÀÌ °°´Ù¸é
 			diaryService.deleteDiary(dairy);
 		}
 		return "redirect:/diary/view";

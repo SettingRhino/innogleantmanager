@@ -21,7 +21,7 @@ public class Diary {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id", nullable=false)
 	private int id;
-	@NotEmpty(message="ì œëª©ì€ ê¼­ ì…ë ¥í•´ì£¼ì„¸ìš”!")
+	@NotEmpty(message="Á¦¸ñÀº ²À ÀÔ·ÂÇØÁÖ¼¼¿ä!")
 	@Column(name="title", nullable=false)
 	private String title;
 	@Column(name="user", nullable=false)

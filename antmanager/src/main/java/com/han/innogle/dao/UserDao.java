@@ -45,14 +45,14 @@ public class UserDao {
 		session.flush();
 	}
 
-//ë°”ê¾¸ê¸°
+//¹Ù²Ù±â
 	public 	List<User> idchk(String username) {
 		Session session = sessionFactory.getCurrentSession();
 		String hql="from User where username=:username";
 		Query<User> query=session.createQuery(hql,User.class);
 		query.setParameter("username", username);
 		List<User> users=query.getResultList();
-		System.out.println("ì¡´ì¬ì—¬ë¶€"+users.size());
+		System.out.println("Á¸Àç¿©ºÎ"+users.size());
 		return users;
 		
 		// TODO Auto-generated method stub
@@ -60,8 +60,8 @@ public class UserDao {
 	}
 
 	public void signup(User user,Authorities userauth) {
-		//ë“±ë¡í•˜ì.
-		//{noop}ë¶™ì´ê¸°
+		//µî·ÏÇÏÀÚ.
+		//{noop}ºÙÀÌ±â
 		//System.out.println(pwd);
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(user);

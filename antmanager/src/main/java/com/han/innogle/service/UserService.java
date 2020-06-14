@@ -51,7 +51,7 @@ public class UserService {
 		else return true;
 	}
 
-	public boolean answerchk(String username,String userconfirmanswer) {//ì¸ìëŠ” ì…ë ¥ì°½ì— ìˆëŠ”ê±°ì„
+	public boolean answerchk(String username,String userconfirmanswer) {//ÀÎÀÚ´Â ÀÔ·ÂÃ¢¿¡ ÀÖ´Â°ÅÀÓ
 		System.out.println("answerchk");
 		System.out.println(username);
 		System.out.println(username);
