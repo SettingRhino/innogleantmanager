@@ -69,58 +69,36 @@
 
 	<div
 		class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">설명 큰글씨</h1>
-		<p class="lead">여기는 간략한 설명 정도 어떨까 합니다.</p>
+		<h1 class="display-4">이노글</h1>
+		<br/>
+		<hr/>
+		<br/>
 	</div>
 
 	<div class="container">
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">제목</h4>
+					<h4 class="my-0 font-weight-normal">영업 일지</h4>
 				</div>
 				<div class="card-body">
-					<h1 class="card-title pricing-card-title">큰글씨</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>설명1</li>
-						<li>설명2</li>
-						<li>설명3</li>
-						<li>설명4</li>
+						<li>매장 영업에 관련된 일지를 관리해보세요</li>
 					</ul>
 					<a class="btn btn-lg btn-block btn-primary"
-						href="<c:url value="/diary/view"/>"> 등록하기</a>
+						href="<c:url value="/diary/view"/>">바로가기</a>
 				</div>
 			</div>
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">제목2</h4>
+					<h4 class="my-0 font-weight-normal">손님 관리</h4>
 				</div>
 				<div class="card-body">
-					<h1 class="card-title pricing-card-title">큰글씨2</h1>
 					<ul class="list-unstyled mt-3 mb-4">
-						<li>설명1</li>
-						<li>설명2</li>
-						<li>설명3</li>
-						<li>설명4</li>
+						<li>자주오는 손님들에 대해 기록해보세요</li>
 					</ul>
 					<a href="<c:url value="/customers" />"><button type="button"
-							class="btn btn-lg btn-block btn-primary">손님 등록</button></a>
-				</div>
-			</div>
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">제목3</h4>
-				</div>
-				<div class="card-body">
-					<h1 class="card-title pricing-card-title">큰글씨3</h1>
-					<ul class="list-unstyled mt-3 mb-4">
-						<li>설명1</li>
-						<li>설명2</li>
-						<li>설명3</li>
-						<li>설명4</li>
-					</ul>
-					<button type="button" class="btn btn-lg btn-block btn-primary"
-						href="#">이동하기</button>
+							class="btn btn-lg btn-block btn-primary">바로가기</button></a>
 				</div>
 			</div>
 		</div>
