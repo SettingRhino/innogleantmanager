@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <!doctype html>
 <html>
@@ -54,7 +55,13 @@
 
 		<a class="btn btn-outline-primary"href="<c:url value="/user/signup"/>">회원가입</a>
 		<a class="btn btn-outline-primary" href="<c:url value="/login"/>">로그인</a>
-		<a class="btn btn-outline-primary" href="<c:url value="/logout"/>">로그아웃</a>
+		<form id="logout" action="<c:url value="/logout" />" method="post">
+			<sec:csrfInput />
+		</form>
+		<c:if test="${pageContext.request.userPrincipal.name != null}">
+			<a class="btn btn-outline-primary"
+				href="javascript:document.getElementById('logout').submit()">로그아웃</a>
+		</c:if>
 	</div>
 
 	<div

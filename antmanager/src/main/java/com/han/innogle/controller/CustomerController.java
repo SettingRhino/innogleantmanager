@@ -27,15 +27,13 @@ public class CustomerController {
 	// 현재 있는 손님리스트 보여주기
 	@RequestMapping("/customers")
 	public String getCustomers(Model model, Authentication auth) {
-		if (!auth.isAuthenticated()) {
-			return "redirect:/login";
-		} else {
+		
 			List<Customer> customers = customerService.getCustomers(auth.getName());
 
 			model.addAttribute("customers", customers);
 
 			return "customer";
-		}
+		
 	}
 
 	
