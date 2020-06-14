@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.han.innogle.dao.UserDao;
+import com.han.innogle.model.Authorities;
 import com.han.innogle.model.User;
+import com.han.innogle.model.UserSignInfo;
 
 @Service
 public class UserService {
@@ -32,12 +34,68 @@ public class UserService {
 	}
 
 	public int idchk(String username) {
-		return userDao.idchk(username);
+		if(userDao.idchk(username).size()==0) {
+			return 0;
+		}else {
+			return 1;
+		}
 		// TODO Auto-generated method stub
 	}
 
-	public void signup(User user) {
-		userDao.signup(user);
+	
+
+	public boolean userconfirmchk(String username) {
+		// TODO Auto-generated method stub
+		User user=userDao.getUserByName(username);
+		if(user.getUserconfirmanswer()==null) {return false;}
+		else return true;
+	}
+
+	public boolean answerchk(String username,String userconfirmanswer) {//인자는 입력창에 있는거임
+		System.out.println("answerchk");
+		System.out.println(username);
+		System.out.println(username);
+		System.out.println(userconfirmanswer);
+		User user=userDao.getUserByName(username);
+		// TODO Auto-generated method stub
+		return user.getUserconfirmanswer().equals(userconfirmanswer);
+	}
+	
+	public boolean updateUserpw(UserSignInfo userSignInfo) {
+		if(userSignInfo.getPassword().equals(userSignInfo.getPassword2())){
+			User user=new User();
+			String pwd ="{noop}"+ userSignInfo.getPassword();
+			user.setUsername(userSignInfo.getUsername());
+			user.setPassword(pwd);
+			user.setEnabled(true);
+			user.setUserconfirmquestion(userSignInfo.getUserconfirmquestion());
+			user.setUserconfirmanswer(userSignInfo.getUserconfirmanswer());
+			userDao.updateUser(user);
+			return true;
+		}else {
+			return false;
+		}
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public boolean signup(UserSignInfo userSignInfo) {
+		if(userSignInfo.getPassword().equals(userSignInfo.getPassword2())){
+			User user=new User();
+			String pwd ="{noop}"+ userSignInfo.getPassword();
+			user.setUsername(userSignInfo.getUsername());
+			user.setPassword(pwd);
+			user.setEnabled(true);
+			user.setUserconfirmquestion(userSignInfo.getUserconfirmquestion());
+			user.setUserconfirmanswer(userSignInfo.getUserconfirmanswer());
+			Authorities userauth=new Authorities();
+			userauth.setUsername(user.getUsername());
+			userauth.setAuthority("ROLE_USER");
+			userDao.signup(user,userauth);
+			return true;
+		}else {
+			return false;
+		}
 		// TODO Auto-generated method stub
 		
 	}

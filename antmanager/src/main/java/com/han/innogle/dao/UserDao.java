@@ -38,37 +38,31 @@ public class UserDao {
 		// TODO Auto-generated method stub
 		
 	}
-
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(user);
+		session.flush();
 	}
 
-	public int idchk(String username) {
+//¹Ù²Ù±â
+	public 	List<User> idchk(String username) {
 		Session session = sessionFactory.getCurrentSession();
 		String hql="from User where username=:username";
 		Query<User> query=session.createQuery(hql,User.class);
 		query.setParameter("username", username);
 		List<User> users=query.getResultList();
-		System.out.println("ì¡´ì¬ì—¬ë¶€"+users.size());
-		if(users.size()==0) {
-			return 0;
-		}else {
-			return 1;
-		}
+		System.out.println("Á¸Àç¿©ºÎ"+users.size());
+		return users;
+		
 		// TODO Auto-generated method stub
 
 	}
 
-	public void signup(User user) {
-		//ë“±ë¡í•˜ì.
-		//{noop}ë¶™ì´ê¸°
-		String pwd ="{noop}"+ user.getPassword();
-		user.setPassword(pwd);
-		System.out.println(pwd);
-		Authorities userauth=new Authorities();
-		userauth.setUsername(user.getUsername());
-		userauth.setAuthority("ROLE_USER");
+	public void signup(User user,Authorities userauth) {
+		//µî·ÏÇÏÀÚ.
+		//{noop}ºÙÀÌ±â
+		//System.out.println(pwd);
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(user);
 		session.saveOrUpdate(userauth);
@@ -76,4 +70,6 @@ public class UserDao {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 }
