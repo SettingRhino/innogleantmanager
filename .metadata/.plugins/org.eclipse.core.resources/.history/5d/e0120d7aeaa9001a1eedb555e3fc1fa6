@@ -1,0 +1,63 @@
+package com.han.innogle.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.han.innogle.dao.UserDao;
+import com.han.innogle.model.User;
+import com.han.innogle.model.UserSignInfo;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserDao userDao;
+	public User getUserByName(String username) {
+		// TODO Auto-generated method stub
+		return userDao.getUserByName(username);
+	} 
+	
+	public void addUser(User user) {
+		userDao.addUser(user);
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteUser(User user) {
+		// TODO Auto-generated method stub
+		userDao.deleteUser(user);
+	}
+
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+		 userDao.updateUser(user);
+	}
+
+	public int idchk(String username) {
+		if(userDao.idchk(username).size()==0) {
+			return 0;
+		}else {
+			return 1;
+		}
+		// TODO Auto-generated method stub
+	}
+
+	public void signup(User user) {
+		userDao.signup(user);
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean userconfirmchk(String username) {
+		// TODO Auto-generated method stub
+		User user=userDao.getUserByName(username);
+		if(user.getUserconfirmanswer()==null) {return false;}
+		else return true;
+	}
+
+	public boolean answerchk(String username,String userconfirmanswer) {//인자는 입력창에 있는거임
+		User user=userDao.getUserByName(username);
+		user.getUserconfirmanswer()
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

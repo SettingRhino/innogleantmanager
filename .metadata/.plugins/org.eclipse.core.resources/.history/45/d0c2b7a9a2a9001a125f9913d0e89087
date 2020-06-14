@@ -1,0 +1,10 @@
+package com.han.innogle.model;
+
+public class Diary {
+	private int id;
+	private String title;
+	private String user;
+	private String contents;
+	private String discription;
+	private String date;
+}

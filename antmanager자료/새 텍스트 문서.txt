@@ -1,0 +1,8 @@
+CREATE TABLE `antmanagerdb`.`dairytable` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `user` VARCHAR(45) NOT NULL,
+  `contents` LONGTEXT NULL,
+  `discription` LONGTEXT NULL,
+  `date` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));

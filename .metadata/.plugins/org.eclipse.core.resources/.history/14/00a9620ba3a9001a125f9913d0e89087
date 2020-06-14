@@ -1,0 +1,27 @@
+package com.han.innogle.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.han.innogle.model.Diary;
+import com.han.innogle.model.User;
+
+public class DiaryDao {
+	@Autowired
+	private SessionFactory sessionFactory;
+	public ArrayList<Diary> getdiarylist(String name) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		String hql="from dairytable where user=:username";
+		Query<Diary> query=session.createQuery(hql,Diary.class);
+		query.setParameter("username", name);
+		List<Diary> users=query.getResultList();
+		return null;
+	}
+
+}
